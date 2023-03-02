@@ -32,6 +32,6 @@ def conservative_map(x,p):
 
 
 
-
+ 
 # "Science is a differential equation. Religion is a boundary condition"
 # Alan Turing, epigram to Robin Gandy (1954)
