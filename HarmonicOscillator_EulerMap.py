@@ -10,8 +10,8 @@
 # Outputs:
 #     xv_notConserved     -    position over time, non-symplectic map 	[m]
 #     pv_notConserved     -    momenta over time, non-symplectic map   	[m/s]
-#     xv_Conserved     	  -    position over time, symplectic map 		  [m]
-#     pv_Conserved    	  -    momenta over time, symplectic map   		  [m/s]
+#     xv_Conserved     	  -    position over time, symplectic map 	[m]
+#     pv_Conserved    	  -    momenta over time, symplectic map   	[m/s]
 #
 # Notes: 
 #	  1. This is a very basic code that shows the differences between a volume
