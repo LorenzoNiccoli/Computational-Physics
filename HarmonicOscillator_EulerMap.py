@@ -15,8 +15,8 @@
 #
 # Notes: 
 #	  1. This is a very basic code that shows the differences between a volume
-#		   preserved and a non-volume preserved solution of an harmonic oscillator.
-#		   It serves as a tutorial and it is not the most efficient solution. 
+#            preserved and a non-volume preserved solution of an harmonic oscillator.
+#            It serves as a tutorial and it is not the most efficient solution. 
 #
 # Author : Lorenzo Niccoli
 # Email  : lorenzo.niccoli@unifi.it (March 2023)
