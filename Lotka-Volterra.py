@@ -15,7 +15,7 @@
 #	    end_time		  -  	lenght of the simulation 
 #
 # Outputs:
-#	    pray	    -    pray population variation over time
+#	    pray        -    pray population variation over time
 #	    predator    -	 predator population variation over time
 #
 # Note:
