@@ -18,8 +18,8 @@
 #	    pray        -   pray population variation over time
 #	    predator    -   predator population variation over time
 #
-# Note:
-# 	  1.	A stationaty solution is obatined if pray_t0 = a/b and predator_t0 = c/d. 
+# Notes:
+# 	 1.	A stationaty solution is obatined if pray_t0 = a/b and predator_t0 = c/d. 
 #
 # Author: Lorenzo Niccoli
 # Email:  lorenzo.niccol@unifi.it
