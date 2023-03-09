@@ -2,7 +2,7 @@
 # Like in the classical description it is assumed that the pray (e.g. rabbits) and the 
 # predator (e.g. foxes) are only species in the ecosistem. The predator has a negative impact
 # on pray population while the pray has a positive impact on predator population.
-# The Newton equation of motion are solved using the standard Verlet algorithm
+# The Euler method is used to solve the differential equations.
 # 
 # Parameters:
 #           pray_t0         -       initial pray population
