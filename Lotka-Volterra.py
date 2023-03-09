@@ -5,18 +5,18 @@
 # The Newton equation of motion are solved using the standard Verlet algorithm
 # 
 # Parameters:
-#     pray_t0			    -	    initial pray population
+#     pray_t0			  -	    initial pray population
 #	    predator_t0		  -	    initial predator population
-#	    a				        -	    pray natural grow rate
-#	    b				        - 	  pray death rate due to predators
-#	    c				        - 	  predator natural death rate	
-#	    d				        -	    number of eaten pray to give a new predator
-#	    timestep		    -	    timestep of the simulation
-#	    end_time		    -  	  lenght of the simulation 
+#	    a				  -	    pray natural grow rate
+#	    b				  - 	pray death rate due to predators
+#	    c				  - 	predator natural death rate	
+#	    d				  -	    number of eaten pray to give a new predator
+#	    timestep		  -	    timestep of the simulation
+#	    end_time		  -  	lenght of the simulation 
 #
 # Outputs:
-#	    pray			  -    pray population variation over time
-#	    predator    -	   predator population variation over time
+#	    pray	    -    pray population variation over time
+#	    predator    -	 predator population variation over time
 #
 # Note:
 # 	  1.	A stationaty solution is obatined if pray_t0 = a/b and predator_t0 = c/d. 
