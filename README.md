@@ -4,7 +4,8 @@ They serve as a tutorial with not intent to be the most performing solutions, ra
 
 Problems:
 1. Harmonic Oscillator (sympletic and non sympletic map)      
-2. Lotka–Volterra equations                                 
-
+2. Lotka–Volterra equations
+3. Evaluation of π via Monte Carlo method
+   
 Author : Lorenzo Niccoli                                                                                                                                   
 Email  : lorenzo.niccoli@unifi.it (March 2023)
