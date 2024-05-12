@@ -8,4 +8,4 @@ Problems:
 3. Evaluation of π via Monte Carlo method
    
 Author : Lorenzo Niccoli                                                                                                                                   
-Email  : lorenzo.niccoli@unifi.it (March 2023)
+Email  : lorenzo.niccoli@unifi.it (May 2024)
