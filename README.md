@@ -1,4 +1,4 @@
-# Computational-Physics
+# Computational Physics
 This repository contains basic codes that solve some common problems encountered in computational physics. 
 They serve as a tutorial with not intent to be the most performing solutions.         
 
@@ -8,4 +8,4 @@ Problems:
 3. Evaluation of π via Monte Carlo method
    
 Author : Lorenzo Niccoli                                                                                                                                   
-Email  : lorenzo.niccoli@unifi.it (May 2024)
+Email  : lorenzo.niccoli@phys.chem.ethz.ch (2025)
