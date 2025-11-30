@@ -1,21 +1,31 @@
 \documentclass[12pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[english,italian]{babel}
+\usepackage[english]{babel}
 \usepackage[a4paper, margin=2.54cm]{geometry}
 \usepackage{amsmath, amssymb}   
 \usepackage{setspace}           
 \usepackage{parskip}            
 \usepackage{array}
+\usepackage[most]{tcolorbox}
 
-\title{ODE}
+\title{Ordinary Differential Equations}
 \author{Lorenzo Niccoli}
 \date{}
 
 \begin{document}
 
 \maketitle
+\tableofcontents
+\begin{tcolorbox}[colback=yellow!10!white, colframe=red!70!black, title=Warnings, sharp corners]
+\textbf{1.} This document is a draft version and may contain errors or incomplete information.
 
+\vspace{0.3em}
+\textbf{2.} This is not intended to be a comprehensive treatment of the topic, but rather a brief introduction to some basic concepts and methods.
+            The focus is on practical implementation and numerical methods rather than rigorous mathematical theory.
+\end{tcolorbox}
+
+\newpage
 \section{Solving Ordinary Diﬀerential Equations}
 The first set of problems we address are ordinary differntial equation of the form: 
 
@@ -27,15 +37,26 @@ is a given function. The initial condition \(y(t_0) = y_0\) specifies the value 
 solution at time \(t_0\).\\
 
 This is a quite general formulation that includes many problems of interest in science and engineering. 
-This equation models, for example, simple physical problems such asradiocative decay. 
+This equation models, for example, simple physical problems such as radiocative decay.  As an example, consider the following differential equation: 
+\begin{equation}
+    \frac{dy}{dt} = -k y \qquad y(0) = y_0
+\end{equation}
+where \(k\) is a positive constant. This equation describes an exponential decay process, such as the cooling of a 
+hot object in a colder environment (Newton's law of cooling). The analytical solution to this equation is given by:
+\begin{equation}
+    y(t) = y_0 e^{-kt}
+\end{equation}          
+Many physical phenomena can be modeled using ordinary differential equations. Some examples are listed in Table 1.\\
+However, not all ODEs can be solved analytically, and numerical methods are often required to obtain approximate solutions. 
+We will explore differnt numerical methods for solving ODEs in the following sections, starting with the simplest one, 
+the Euler method and continuing with sligtly more advanced techniques such as the Runge-Kutta methods.
+\vspace{0.5cm}
 
 \renewcommand{\arraystretch}{2}
-
 \begin{table}[h!]
 \centering
 \caption{Some physical phenomena modeled by ordinary differential equations (ODEs).}
-\begin{tabular}{|>{\centering\arraybackslash}m{6cm}|
-                    >{\centering\arraybackslash}m{8cm}|}
+\begin{tabular}{|>{\centering\arraybackslash}m{6cm}  >{\centering\arraybackslash}m{8cm}|}
 \hline
 \textbf{Physical phenomena} & \textbf{ODEs} \\
 \hline
@@ -53,8 +74,7 @@ First order kinetics        & $\frac{d[A]}{dt} = -k[A]$ \\
 \hline
 \end{tabular}
 \end{table}
-
-
+\newpage
 \subsection{Euler algorithm}
 The simplest numerical method for solving ordinary differential equations is the Euler method. 
 It is based on the idea of approximating the solution by a series of small steps, using a Taylor expantion up 
@@ -71,8 +91,24 @@ Iterating this equation and introducing a discrete time variable \(t_n = t_0 + n
 \end{equation}
 
 In contrast to the analytical solution which was easy for the simple example given above, the Euler method retains
-its simplicity nomatter which differential equations it is applied to.
+its simplicity nomatter which differential equations it is applied to. In this repository, there is implemented a simple C++ 
+code that uses the Euler method to solve Newton's law of cooling. The code is in the folder \texttt{newton\_eq\_euler}.
+
+\section{Higher-Order Methods}
+\subsection{Order of integration methods}
+The truncation of the Taylor expansion in the Euler method leads to a local error of order \(O(\Delta t^2)\) per step,
+which accumulates to a global error of order \(O(\Delta t)\) over the entire integration interval. In any simulation we need 
+to control this error in order to obtain results which is not influenced by the time interval \(\Delta t\).\\
+There are two options to reduce the error: either decrease the time step \(\Delta t\) or use a \textsf{higher-order integration method}.\\
+A method which introduces an error of order \(O(\Delta t^{n})\) per single step is said to be locally of n-th order. 
+Interating a locally n-th order method over \(N\) steps leads to a global error of order \(O(\Delta t^{n-1})\).\\
+
+The total error over the time T is then:
+\begin{equation}
+    \text{Error} \propto N \Delta t^{n} = \frac{T}{\Delta t} \Delta t^{n} = T \Delta t^{n-1}
+\end{equation}
+and the method is said to be globally of (n-1)-th order.\\
+For example, the Euler method is locally of the second order and globally of the first order.\\
+
 
 \end{document}
-
-
