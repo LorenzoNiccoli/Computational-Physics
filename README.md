@@ -1,11 +1,13 @@
-# Computational Physics
-This repository contains basic codes that solve some common problems encountered in computational physics. 
-They serve as a tutorial with not intent to be the most performing solutions.         
+##Computational Physics – Personal Study
 
-Problems:
-1. Harmonic Oscillator (sympletic and non sympletic map)      
-2. Lotka–Volterra equations
-3. Evaluation of π via Monte Carlo method
-   
+This repository contains simple computational physics codes created for personal study and learning. 
+The focus is on understanding numerical methods rather than performance optimization.  
+
+Included examples:  
+Harmonic Oscillator – symplectic and non-symplectic methods.  
+Lotka–Volterra Equations – solving predator-prey dynamics with ODEs.  
+Ordinary Differential Equations (ODEs) – solving standard physics ODEs.  
+Monte Carlo Estimation of π – approximating π using random sampling.  
+
 Author : Lorenzo Niccoli                                                                                                                                   
-Email  : lorenzo.niccoli@phys.chem.ethz.ch (2025)
+Email  : lorenzo.niccoli@phys.chem.ethz.ch (2025)  
