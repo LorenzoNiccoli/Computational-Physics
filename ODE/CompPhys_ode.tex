@@ -1,0 +1,78 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english,italian]{babel}
+\usepackage[a4paper, margin=2.54cm]{geometry}
+\usepackage{amsmath, amssymb}   
+\usepackage{setspace}           
+\usepackage{parskip}            
+\usepackage{array}
+
+\title{ODE}
+\author{Lorenzo Niccoli}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Solving Ordinary Diﬀerential Equations}
+The first set of problems we address are ordinary differntial equation of the form: 
+
+\begin{equation}
+    \frac{dy}{dt} = f(y,t) \qquad y(t_0) = y_0
+\end{equation}
+where \(y\) is the unknown function, \(t\) is the independent variable, and \(f(y,t)\) 
+is a given function. The initial condition \(y(t_0) = y_0\) specifies the value of the 
+solution at time \(t_0\).\\
+
+This is a quite general formulation that includes many problems of interest in science and engineering. 
+This equation models, for example, simple physical problems such asradiocative decay. 
+
+\renewcommand{\arraystretch}{2}
+
+\begin{table}[h!]
+\centering
+\caption{Some physical phenomena modeled by ordinary differential equations (ODEs).}
+\begin{tabular}{|>{\centering\arraybackslash}m{6cm}|
+                    >{\centering\arraybackslash}m{8cm}|}
+\hline
+\textbf{Physical phenomena} & \textbf{ODEs} \\
+\hline
+Radioactive decay           & $\frac{dN}{dt} = -\lambda N$ \\
+\hline
+Exponential growth          & $\frac{dy}{dt} = k y$ \\
+\hline
+Newton cooling law          & $\frac{dT}{dt} = -k(T - T_\text{amb})$ \\
+\hline
+Charge/Discharge plate (RC) & $\frac{dV}{dt} = \frac{1}{RC}(V_0 - V)$ \\
+\hline
+Logistic growth             & $\frac{dP}{dt} = rP(1-P/K)$ \\
+\hline
+First order kinetics        & $\frac{d[A]}{dt} = -k[A]$ \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\subsection{Euler algorithm}
+The simplest numerical method for solving ordinary differential equations is the Euler method. 
+It is based on the idea of approximating the solution by a series of small steps, using a Taylor expantion up 
+to the first order.
+
+\begin{equation}
+    y(t_0 + \Delta t) \approx y(t_0) + \Delta t \frac{dy}{dt} = y_0 + \Delta t f(y_0, t_0) + O(\Delta t^2)
+\end{equation}
+
+Iterating this equation and introducing a discrete time variable \(t_n = t_0 + n \Delta t\), we obtain the Euler algorithm:
+
+\begin{equation}
+    y_{n+1} = y_n + \Delta t f(y_n, t_n) + O(\Delta t^2)
+\end{equation}
+
+In contrast to the analytical solution which was easy for the simple example given above, the Euler method retains
+its simplicity nomatter which differential equations it is applied to.
+
+\end{document}
+
+

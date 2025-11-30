@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/lniccoli/Documents/CompPhys/Computational-Physics/ODE/newton_eq_euler/output/newton_eq_euler'
+relocations:     []
+...

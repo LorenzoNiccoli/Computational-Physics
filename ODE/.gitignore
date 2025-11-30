@@ -1,0 +1,7 @@
+# File compilati
+*.log
+*.aux
+*.fls
+*.synctex.gz
+*.fdb_latexmk
+
