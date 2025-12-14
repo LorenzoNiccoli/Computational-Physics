@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/lniccoli/Documents/Personal_projects/CompPhys/Computational-Physics/MagRes/output/onespin_nmr'
+relocations:     []
+...

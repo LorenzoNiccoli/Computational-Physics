@@ -36,20 +36,17 @@ where \(y\) is the unknown function, \(t\) is the independent variable, and \(f(
 is a given function. The initial condition \(y(t_0) = y_0\) specifies the value of the 
 solution at time \(t_0\).\\
 
-This is a quite general formulation that includes many problems of interest in science and engineering. 
-This equation models, for example, simple physical problems such as radiocative decay.  As an example, consider the following differential equation: 
+This is a quite general formulation that includes many problems of interest in science and engineering. This equation models, for example, simple physical problems such as radiocative decay.  As an example, consider the following differential equation: 
 \begin{equation}
     \frac{dy}{dt} = -k y \qquad y(0) = y_0
 \end{equation}
-where \(k\) is a positive constant. This equation describes an exponential decay process, such as the cooling of a 
-hot object in a colder environment (Newton's law of cooling). The analytical solution to this equation is given by:
+where \(k\) is a positive constant. This equation describes an exponential decay process, such as the cooling of a hot object in a colder environment (Newton's law of cooling). The analytical solution to this equation is given by:
 \begin{equation}
     y(t) = y_0 e^{-kt}
 \end{equation}          
 Many physical phenomena can be modeled using ordinary differential equations. Some examples are listed in Table 1.\\
-However, not all ODEs can be solved analytically, and numerical methods are often required to obtain approximate solutions. 
-We will explore differnt numerical methods for solving ODEs in the following sections, starting with the simplest one, 
-the Euler method and continuing with sligtly more advanced techniques such as the Runge-Kutta methods.
+However, not all ODEs can be solved analytically, and numerical methods are often required to obtain approximate solutions. We will explore differnt numerical methods for solving ODEs in the following sections, starting with the simplest one, the Euler method and continuing with sligtly more advanced techniques such as the Runge-Kutta methods.\\
+In order to prove the effectiveness of these numerical methods, we will impliment them to solve some differential equations that does not have an analytical solution.
 \vspace{0.5cm}
 
 \renewcommand{\arraystretch}{2}
@@ -76,9 +73,7 @@ First order kinetics        & $\frac{d[A]}{dt} = -k[A]$ \\
 \end{table}
 \newpage
 \subsection{Euler algorithm}
-The simplest numerical method for solving ordinary differential equations is the Euler method. 
-It is based on the idea of approximating the solution by a series of small steps, using a Taylor expantion up 
-to the first order.
+The simplest numerical method for solving ordinary differential equations is the Euler method. It is based on the idea of approximating the solution by a series of small steps, using a Taylor expantion up to the first order.
 
 \begin{equation}
     y(t_0 + \Delta t) \approx y(t_0) + \Delta t \frac{dy}{dt} = y_0 + \Delta t f(y_0, t_0) + O(\Delta t^2)
@@ -96,12 +91,9 @@ code that uses the Euler method to solve Newton's law of cooling. The code is in
 
 \section{Higher-Order Methods}
 \subsection{Order of integration methods}
-The truncation of the Taylor expansion in the Euler method leads to a local error of order \(O(\Delta t^2)\) per step,
-which accumulates to a global error of order \(O(\Delta t)\) over the entire integration interval. In any simulation we need 
-to control this error in order to obtain results which is not influenced by the time interval \(\Delta t\).\\
+The truncation of the Taylor expansion in the Euler method leads to a local error of order \(O(\Delta t^2)\) per step, which accumulates to a global error of order \(O(\Delta t)\) over the entire integration interval. In any simulation we need to control this error in order to obtain results which is not influenced by the time interval \(\Delta t\).\\
 There are two options to reduce the error: either decrease the time step \(\Delta t\) or use a \textsf{higher-order integration method}.\\
-A method which introduces an error of order \(O(\Delta t^{n})\) per single step is said to be locally of n-th order. 
-Interating a locally n-th order method over \(N\) steps leads to a global error of order \(O(\Delta t^{n-1})\).\\
+A method which introduces an error of order \(O(\Delta t^{n})\) per single step is said to be locally of n-th order. Interating a locally n-th order method over \(N\) steps leads to a global error of order \(O(\Delta t^{n-1})\).\\
 
 The total error over the time T is then:
 \begin{equation}

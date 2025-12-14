@@ -1,0 +1,22 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build onespin_nmr",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "-I/opt/homebrew/include",
+                "-L/opt/homebrew/lib",
+                "onespin_nmr.c",
+                "-lgsl",
+                "-lgslcblas",
+                "-lm",
+                "-o",
+                "onespin_nmr"
+            ],
+            "group": "build",
+            "problemMatcher": "$gcc"
+        }
+    ]
+}

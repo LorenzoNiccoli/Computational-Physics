@@ -13,11 +13,12 @@
  *   - plot_newton_cooling.pdf
  *
  * Notes:
- *   - PDF uses Latin Modern font (LaTeX style)
+ *   
  *****************************************************/
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 int main() {
 
@@ -27,10 +28,14 @@ int main() {
     double dt = 1;
     double t_final = 1200.0;
 
+    // Inform user
+    printf("Starting calculation\n");
+
+    // Track time
+    clock_t start_time = clock();
+
     // Save data to CSV
     FILE *f = fopen("newton_euler.csv", "w");
-
-    // Check file opening
     if (!f) { perror("Error opening CSV"); return 1;}
 
     // Euler method loop
@@ -42,15 +47,15 @@ int main() {
     // Close CSV file
     fclose(f);
 
-
-// Plot 
+    // Plot 
     FILE *gp = popen("gnuplot", "w");
     if (!gp) {perror("Error opening gnuplot"); return 1;}
 
-    // Plot (dynamic padding 10%)
+    // Gnuplot plotting commands
     fprintf(gp,
             "set terminal pdfcairo enhanced color font 'Latin Modern Roman,14'\n"
-            "set output 'newton_cooling.pdf'\n"
+            "set output 'newton_eq_euler.pdf'\n"
+            "set title 'Newton Law of Cooling - Euler Method'\n"
             "set xlabel 'Time (s)'\n"
             "set ylabel 'Temperature (°C)'\n"
             "set grid lw 1 lc rgb '#cc'\n" 
@@ -60,14 +65,16 @@ int main() {
             "ypad = (Y_max - Y_min) * 0.10\n"
             "set xrange [X_min - xpad : X_max + xpad]\n"
             "set yrange [Y_min - ypad : Y_max + ypad]\n"
-            "plot 'newton_euler.csv' using 1:2 with lines lw 2 title 'Euler'\n"
+            "plot 'newton_euler.csv' using 1:2 with lines lw 3 title 'Euler Method'\n"
     );
 
     // Close gnuplot
     pclose(gp);
 
-    // Notify user
-    printf("Plot saved.\n");
+    // Print elapsed time
+    clock_t end_time = clock();
+    double elapsed_secs = double(end_time - start_time) / CLOCKS_PER_SEC;
+    printf("Elapsed time: %.6f seconds\n", elapsed_secs);
 
     // End program
     return 0;
